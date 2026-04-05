@@ -95,7 +95,7 @@ jobs:
       - name: Configure AWS via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume:    ${{ needs.set-env.outputs.role_arn }}
+          role-to-assume: arn:aws:iam::451834067085:role/ecr-ecs-github-actions-dev
           aws-region:        ${{ vars.AWS_REGION }}
           role-session-name: gh-be-${{ needs.set-env.outputs.environment }}-${{ github.run_id }}
 
